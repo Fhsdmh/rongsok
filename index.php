@@ -61,8 +61,9 @@
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="formGroupExampleInput1">Email/No. Telepon</label>
-                <input type="email" class="form-control" placeholder="Masukkan Email/No. Telepon Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
+                <label for="formGroupExampleInput1">Email</label>
+                <input type="email" class="form-control" placeholder="Masukkan Email" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
+                <small id="emailHelp" class="form-text text-muted">Masukkan Email dengan benar dan sertakan @ (contoh@example.com)</small>
               </div>
 
               <div class="form-group">
@@ -104,6 +105,7 @@
                 <p style="font-weight: normal;">Untuk mendapatkan password baru, masukkan email yang Anda gunakan saat pendaftaran akun Rongsok</p>
                 <label for="formGroupExampleInput3">Email</label>
                 <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
+                <small id="emailHelp" class="form-text text-muted">Masukkan Email dengan benar dan sertakan @ (contoh@example.com)</small>
               </div>
 
               <div class="modal-body2">
@@ -121,7 +123,7 @@
     <!-- akhir modal lupa password -->
 
       <div class="modal fade bd-example-modal-md" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle3" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
+        <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -146,16 +148,19 @@
                 <div class="form-group">
                   <label for="formGroupExampleInput6">Email</label>
                   <input type="email" class="form-control" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
+                  <small id="emailHelp" class="form-text text-muted">Kami tidak akan memberi tahu siapapun tentang Email Anda</small>
                 </div>
 
                 <div class="form-group">
                   <label for="formGroupExampleInput7">Alamat lengkap</label>
                   <input type="text" class="form-control" placeholder="Masukkan Alamat lengkap Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Alamat lengkap Anda!')" oninput="setCustomValidity('')">
+                  <small id="emailHelp" class="form-text text-muted">Mohon sertakan juga RT/RW Anda</small>
                 </div>
 
                 <div class="form-group">
                   <label for="formGroupExampleInput8">Password</label>
                   <input type="password" class="form-control" placeholder="Masukkan Password Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Password Anda!')" oninput="setCustomValidity('')">
+                  <small id="emailHelp" class="form-text text-muted">Gunakan password yang kuat, minimal 1-8 karakter dan sertakan angka</small>
                 </div>
 
                 <div class="form-group">
@@ -164,12 +169,14 @@
                 </div>
 
                 <div class="modal-body2">
-                  <button type="submit" class="btn">MASUK</button>
+                  <p style="margin-bottom: 0px;">Dengan klik daftar, kamu menyetujui</p>
+                  <p style="margin-bottom: 20px;"><a href="index.php">Syarat dan Ketentuan</a> yang telah ditentukan oleh <a href="index.php"><img src="images/katarongsokkecil9.jpg" style="vertical-align: sub;"></a></p>
+                  <button type="submit" class="btn">DAFTAR</button>
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <p>Sudah memiliki akun? <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter3" aria-hidden="true">Masuk</button></p>
+              <p>Sudah memiliki akun? <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter" aria-hidden="true">Masuk</button></p>
             </div>
           </div>
         </div>
@@ -177,7 +184,7 @@
 
 
     <!-- awal jumbotron -->
-    <section class="awal" id="awal">
+    <section class="jumbotron" id="jumbotron">
     <div class="container">
     <div class="row">
       <div class="col-sm-8">
@@ -185,7 +192,7 @@
       <h1>lebih berkelas</h1>
       <h1>di mana pun</h1>
       <h1 style="margin-bottom: 14px;">kapan pun.</h1>
-      <p><img src="images/katarongsokkecil9.jpg" alt="kata rongsok kecil"> merupakan platform yang menyediakan sarana</p>
+      <p>Rongsok merupakan platform yang menyediakan sarana</p>
       <p style="margin-bottom: 25px;">untuk memudahkan kamu dalam menjual barang bekas (rongsok)</p>
       <a class="btn btn-primary" href="mulaijual.php" role="button">Mulai Jual</a>
       </button>

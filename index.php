@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active" style="padding-right: 50px;">
-              <a class="nav-link" href="" style="color: #0c1e2d;">Berandaa</a>
+              <a class="nav-link" href="" style="color: #0c1e2d;">Beranda</a>
             </li>
             <li class="nav-item active" style="padding-right: 50px;">
               <a class="nav-link" href="" style="color: #0c1e2d;">Daftar Harga</a>

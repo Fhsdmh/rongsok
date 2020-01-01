@@ -234,6 +234,13 @@
                     <option value="6">Lainnya</option>
                   </select>
                   </div>
+
+                  <label for="formGroupExampleInput15">Upload foto barang bekas</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required oninvalid="this.setCustomValidity('Mohon upload foto barang bekas Anda!')" oninput="setCustomValidity('')">
+                    <label class="custom-file-label" for="inputGroupFile01">Upload foto barang bekas Anda</label>
+                  </div>
+                  <small id="emailHelp" class="form-text text-muted">Maksimal file gambar sebesar 3 MB</small>
                 </div>
 
                 <div class="modal-body2">
@@ -364,5 +371,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+    <script>
+        $('.navbar-collapse a').click(function(){
+            $(".navbar-collapse").collapse('hide');
+        });
+    </script>
   </body>
 </html>

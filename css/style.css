@@ -262,3 +262,11 @@ p .btn-link{
 	background-color: white;
 	border-color: #ced4da;
 }
+
+.custom-file-label::after{
+	padding: 5px;
+}
+
+.custom-file-input:lang(en)~.custom-file-label::after{
+	content: "Upload";
+}

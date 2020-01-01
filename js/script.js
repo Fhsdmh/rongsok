@@ -1,7 +1,3 @@
-$('.nav-link').click(function(){
-
- $("html, body").animate({ scrollTop: $(this.hash).offset().top }, 1000);
-
- return false;
-
+$('.navbar-collapse a').click(function(){
+   $(".navbar-collapse").collapse('hide');
 });

@@ -1,15 +1,27 @@
 .jumbotron{
-	background-image: url('../images/backgroundf.jpg');
-	background-attachment: fixed;
-	background-size: cover;
-	min-height: 620px;
+	min-height: 640px;
 	color: #0c1e2d;
 	margin-bottom: 0px;
+	background-color: white;
 }
 
 .navbar-expand-lg{
 	background-color: #f6f6f6;
-	box-shadow: 0px 0px 30px #000000;
+	box-shadow: 0px 0px 10px #000000;
+}
+
+.row .btn{
+	color: white;
+	background-color: #0c1e2d;
+}
+
+.row .btn:hover{
+	background: #58251C;
+	border-color: #58251C;
+}
+
+.row .btn:focus{
+	box-shadow: none;
 }
 
 .col-sm-8 h1{
@@ -151,7 +163,8 @@
 
 .modal-header{
 	display: block;
-	background-color: #f6f6f6;
+	background-color: #0c1e2d;
+	color: white;
 }
 
 .modal-header .close{
@@ -168,7 +181,7 @@
 	text-align: center;
 	font-weight: bold;
 	font-size: 33px;
-	color: #0c1e2d;
+	color: white;
 	margin-left: 20px;
 }
 
@@ -176,7 +189,11 @@
 	text-align: center;
 	font-size: 15px;
 	margin-bottom: 0px;
-	color: #0c1e2d;
+	color: white;
+}
+
+.modal-header .close{
+	color: white;
 }
 
 
@@ -197,6 +214,10 @@
 
 .modal-footer{
 	justify-content: center;
+}
+
+.modal-body{
+	margin-top: 25px;
 }
 
 .modal-body2{
@@ -234,4 +255,10 @@
 p .btn-link{
 	padding: 0px;
 	vertical-align: initial;
+}
+
+.dropdown .btn{
+	color: grey;
+	background-color: white;
+	border-color: #ced4da;
 }

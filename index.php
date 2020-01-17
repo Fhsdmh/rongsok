@@ -343,13 +343,13 @@ s0.parentNode.insertBefore(s1,s0);
           </div>
 
           <div class="col-sm-12">
-            <a href="https://www.facebook.com" target="_blank">
+            <a href="https://www.facebook.com/rongsok.ind.9" target="_blank">
               <img src="images/facebook.svg" alt="icon fb">
             </a>
-            <a href="https://www.instagram.com" target="_blank">
+            <a href="https://www.instagram.com/rongsok.ind/?hl=id" target="_blank">
               <img src="images/instagram.svg" alt="icon ig">
             </a>
-            <a href="https://www.line.me/id/" target="_blank">
+            <a href="http://line.me/ti/p/~rongs-ok" target="_blank">
               <img src="images/line.svg" alt="icon line">
             </a>
             <a href="https://www.twitter.com" target="_blank">

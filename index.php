@@ -1,3 +1,6 @@
+<?php
+  require 'koneksi.php';
+?>
 <!doctype html>
 <html lang="en" id="home">
   <head>
@@ -9,6 +12,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/favicon.ico">
     <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2.css">
+    <script src="js/sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <title>Rongs-ok</title>
   </head>
@@ -25,12 +34,12 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-  <body style="margin-top: 30px;">
+  <body style="margin-top: 30px;" oncontextmenu="return false;">
     <!-- awal navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f6f6f6;">
       <div class="container">
-        <a class="navbar-brand" href="#home" style="margin-right: 150px;">
-          <img src="images/logonav.svg" alt="logo navbar" width="82" height="47">
+        <a class="navbar-brand" href="index.php" style="margin-right: 150px;">
+          <img src="images/logorongsokbeta.svg" alt="logo navbar" width="82" height="47">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,168 +48,26 @@ s0.parentNode.insertBefore(s1,s0);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active" style="padding-right: 50px;">
-              <a class="nav-link" href="#home" style="color: #0c1e2d;">Beranda</a>
+              <a class="nav-link" href="#home" class="page-scroll" style="color: #0c1e2d;">Beranda</a>
             </li>
             <li class="nav-item active" style="padding-right: 50px;">
-              <a class="nav-link" href="#daftarharga" style="color: #0c1e2d;">Daftar Harga</a>
+              <a class="nav-link" href="#daftarharga" class="page-scroll" style="color: #0c1e2d;">Daftar Harga</a>
             </li>
             <li class="nav-item active" style="padding-right: 50px;">
-              <a class="nav-link" href="#contactus" style="color: #0c1e2d;">Hubungi Kami</a>
+              <a class="nav-link" href="#contactus" class="page-scroll" style="color: #0c1e2d;">Hubungi Kami</a>
             </li>
             <li class="nav-item active"style="padding-right: 50px;">
-              <a class="nav-link" href="" style="color: #0c1e2d;">Tentang</a>
+              <a class="nav-link" href="termsandconditions.php" class="page-scroll" style="color: #0c1e2d;">Tentang Kami</a>
             </li>
           </ul>
-            <button type="button" class="btn mr-3" data-toggle="modal" data-target="#exampleModalCenter">Masuk</button>
-            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter3">Daftar</button>
         </div>
       </div>
     </nav>
     <!-- akhir navbar -->
 
-    <!-- awal trigger modal -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h5 class="modal-title" id="exampleModalCenterTitle">RongsokID</h5>
-            <h6 class="modal-title2">Satu akun untuk semua akses</h6>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="formGroupExampleInput1">Email</label>
-                <input type="email" class="form-control" placeholder="Masukkan Email" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
-                <small id="emailHelp" class="form-text text-muted">Masukkan Email dengan benar dan sertakan @ (contoh@example.com)</small>
-              </div>
-
-              <div class="form-group">
-                <label for="formGroupExampleInput2">Password</label>
-                <input type="password" class="form-control" placeholder="Masukkan Password Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Password Anda!')" oninput="setCustomValidity('')">
-              </div>
-
-              <div class="modal-body2">
-                <button type="submit" class="btn">MASUK</button>
-              </div>
-            </form>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter2" aria-hidden="true">Lupa Password?</button>
-          </div>
-          <p>Belum memiliki akun? <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter3" aria-hidden="true">Daftar</button></p>
-        </div>
-      </div>
-    </div>
-    <!-- akhir trigger modal -->
-
-    <!-- modal lupa password -->
-    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h5 class="modal-title" id="exampleModalCenterTitle">RongsokID</h5>
-            <h6 class="modal-title2">Satu akun untuk semua akses</h6>
-          </div>
-
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <p>Lupa Password?</p>
-                <p style="font-weight: normal;">Untuk mendapatkan password baru, masukkan email yang Anda gunakan saat pendaftaran akun Rongsok</p>
-                <label for="formGroupExampleInput3">Email</label>
-                <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
-                <small id="emailHelp" class="form-text text-muted">Masukkan Email dengan benar dan sertakan @ (contoh@example.com)</small>
-              </div>
-
-              <div class="modal-body2">
-                <button type="submit" class="btn">GANTI PASSWORD</button>
-              </div>
-            </form>
-          </div>
-
-          <div class="modal-footer">
-            <p>Belum memiliki akun? <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter3" aria-hidden="true">Daftar</button></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- akhir modal lupa password -->
-
-    <!-- awal modal daftar -->
-      <div class="modal fade bd-example-modal-md" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle3" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-              <h5 class="modal-title" id="exampleModalCenterTitle">RongsokID</h5>
-              <h6 class="modal-title2">Satu akun untuk semua akses</h6>
-            </div>
-
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="formGroupExampleInput4">Nama Lengkap</label>
-                  <input type="text" class="form-control" placeholder="Masukkan Nama lengkap Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Nama lengkap Anda!')" oninput="setCustomValidity('')">
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput5">No. Telepon</label>
-                  <input type="number" class="form-control" placeholder="Masukkan No. telepon Anda" required oninvalid="this.setCustomValidity('Mohon masukkan No. telepon Anda!')" oninput="setCustomValidity('')">
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput6">Email</label>
-                  <input type="email" class="form-control" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
-                  <small id="emailHelp" class="form-text text-muted">Kami tidak akan memberi tahu siapapun tentang Email Anda</small>
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput7">Alamat lengkap</label>
-                  <textarea class="form-control" placeholder="Masukkan Alamat lengkap Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Alamat lengkap Anda!')" oninput="setCustomValidity('')"></textarea>
-                  <small id="emailHelp" class="form-text text-muted">Mohon sertakan juga RT/RW Anda</small>
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput8">Password</label>
-                  <input type="password" class="form-control" placeholder="Masukkan Password Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Password Anda!')" oninput="setCustomValidity('')">
-                  <small id="emailHelp" class="form-text text-muted">Gunakan password yang kuat, minimal 1-8 karakter dan sertakan angka</small>
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput9">Konfirmasi Password</label>
-                  <input type="password" class="form-control" placeholder="Konfirmasi ulang Password Anda" required oninvalid="this.setCustomValidity('Mohon masukkan ulang Password Anda!')" oninput="setCustomValidity('')">
-                </div>
-
-                <div class="modal-body2">
-                  <p style="margin-bottom: 0px;">Dengan klik daftar, kamu menyetujui</p>
-                  <p style="margin-bottom: 20px;"><a href="index.php">Syarat dan Ketentuan</a> yang telah ditentukan oleh <a href="index.php"><img src="images/katarongsokkecil9.jpg" style="vertical-align: sub;"></a></p>
-                  <button type="submit" class="btn">DAFTAR</button>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <p>Sudah memiliki akun? <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter" aria-hidden="true">Masuk</button></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- akhir modal daftar -->
-
-
       <!-- awal modal mulai jual -->
-      <div class="modal fade bd-example-modal-md" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle4" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
+      <div class="modal fade bd-example-modal-md" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -211,66 +78,102 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
 
             <div class="modal-body">
-              <form>
+              <form action="login.php" method="post">
                 <div class="form-group">
-                  <label for="formGroupExampleInput10">Nama Lengkap</label>
-                  <input type="text" class="form-control" placeholder="Masukkan Nama lengkap Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Nama lengkap Anda!')" oninput="setCustomValidity('')">
+                  <label for="no_telepon">No. Telepon</label>
+                  <input type="text" id="no_telepon" class="form-control" placeholder="Masukkan no. telepon Anda" onkeypress="return angka(event)" name="no_telepon" required oninvalid="this.setCustomValidity('Minimal no. telepon 10 digit')" oninput="setCustomValidity('')" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" minlength="10" maxlength = "12">
                 </div>
 
-                <div class="form-group">
-                  <label for="formGroupExampleInput11">No. Telepon</label>
-                  <input type="number" class="form-control" placeholder="Masukkan No. telepon Anda" required oninvalid="this.setCustomValidity('Mohon masukkan No. telepon Anda!')" oninput="setCustomValidity('')">
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput12">Email</label>
-                  <input type="email" class="form-control" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
-                  <small id="emailHelp" class="form-text text-muted">Kami tidak akan memberi tahu siapapun tentang Email Anda</small>
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput13">Alamat lengkap</label>
-                  <textarea class="form-control" placeholder="Masukkan Alamat lengkap Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Alamat lengkap Anda!')" oninput="setCustomValidity('')"></textarea>
-                  <small id="emailHelp" class="form-text text-muted">Mohon sertakan juga RT/RW Anda</small>
-                </div>
-
-                <div class="form-group">
-                  <label for="formGroupExampleInput14">Jenis barang bekas</label>
-                  <div class="input-group mb-3">
-                  <select class="custom-select" id="inputGroupSelect01" required oninvalid="this.setCustomValidity('Mohon pilih Jenis barang bekas Anda!')" oninput="setCustomValidity('')">
-                    <option value="" disable selected>Pilih jenis barang bekas Anda</option>
-                    <option value="1">Bahan plastik</option>
-                    <option value="2">Bahan besi</option>
-                    <option value="3">Kertas HVS</option>
-                    <option value="4">Kertas lainnya</option>
-                    <option value="5">Campuran</option>
-                    <option value="6">Lainnya</option>
-                  </select>
-                  </div>
-
-                  <label for="formGroupExampleInput15">Upload foto barang bekas</label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required oninvalid="this.setCustomValidity('Mohon upload foto barang bekas Anda!')" oninput="setCustomValidity('')">
-                    <label class="custom-file-label" for="inputGroupFile01">Upload foto barang bekas Anda</label>
-                  </div>
-                  <small id="emailHelp" class="form-text text-muted">Maksimal file gambar sebesar 3 MB</small>
+                <div id="password" style="display: none;">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" class="form-control" name="password" placeholder="Masukkan Password Anda">
+                  <p><button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter" aria-hidden="true" style="float: left;">Lupa password?</button></p>
                 </div>
 
                 <div class="modal-body2">
-                  <p style="margin-bottom: 0px;">Dengan klik Jemput, kamu menyetujui</p>
-                  <p style="margin-bottom: 20px;"><a href="index.php">Syarat dan Ketentuan</a> yang telah ditentukan oleh <a href="index.php"><img src="images/katarongsokkecil9.jpg" style="vertical-align: sub;"></a></p>
-                  <button type="submit" class="btn">JEMPUT</button>
+                  <button type="submit" class="btn" id="lanjutkan" name="lanjutkan">LANJUTKAN</button>
                 </div>
               </form>
             </div>
-            <div class="modal-footer" style="padding-bottom: 0px;">
-              <p>Sudah memiliki akun? <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter" aria-hidden="true">Masuk</button></p>
-            </div>
-            <p>Belum memiliki akun? <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter3" aria-hidden="true">Daftar</button></p>
           </div>
         </div>
       </div>
       <!-- akhir modal mulai jual -->
+
+      <!-- modal register -->
+    <div class="modal fade bd-example-modal-md" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="modal-title" id="exampleModalCenterTitle">RongsokID</h5>
+              <h6 class="modal-title2">Satu akun untuk semua akses</h6>
+            </div>
+
+          <div class="modal-body" style="margin-top: 0px;">
+            <form action="register.php" method="POST" onsubmit="return validate();">
+                <div class="form-group">
+                  <p style="margin-bottom: 0px; color: #58251c;font-size: 20px;font-weight: bold;">ANDA BELUM TERDAFTAR!</p>
+                  <p style="font-weight: normal;">Silahkan lengkapi form di bawah ini untuk melanjutkan</p>
+                  <label for="nama lengkap">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan Nama lengkap Anda" required oninvalid="this.setCustomValidity('Nama lengkap hanya bisa diisi oleh huruf!')" oninput="setCustomValidity('')" pattern="[A-Za-z ]+">
+                </div>
+
+                <div class="form-group">
+                  <label for="no telepon">No. Telepon</label>
+                  <input type="text" id="no_telepon" class="form-control" onkeypress="return angka(event)" name="no_telepon" placeholder="Masukkan No. telepon Anda" required oninvalid="this.setCustomValidity('Minimal no. telepon 10 digit')" oninput="setCustomValidity('')" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" minlength="10" maxlength = "12">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
+                  <small id="emailhelp" class="form-text text-muted">Masukkan Email dengan benar dan sertakan @ (contoh@example.com)</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="alamat lengkap">Alamat lengkap</label>
+                  <textarea class="form-control" id="alamat_lengkap" name="alamat_lengkap" placeholder="Masukkan Alamat lengkap Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Alamat lengkap Anda!')" oninput="setCustomValidity('')"></textarea>
+                  <small id="alamathelp" class="form-text text-muted">Mohon sertakan juga RT/RW Anda</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="tampilpassword()">
+                      </div>
+                    </div>
+                    <input type="password" class="form-control" id="password1" name="password" placeholder="Masukkan Password Anda" required oninvalid="this.setCustomValidity('Password minimal 8 digit dan wajib terdiri dari huruf besar, huruf kecil, angka!')" oninput="setCustomValidity('')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8">
+                  </div>
+                  <small id="passwordhelp" class="form-text text-muted">Password minimal 8 digit dan wajib terdiri dari huruf besar, huruf kecil, angka</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="konfirmasi password">Konfirmasi Password</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="tampilkonfirmasipassword()">
+                      </div>
+                    </div>
+                    <input type="password" class="form-control" id="konfirmasi_password" name="konfirmasi_password" placeholder="Konfirmasi ulang Password Anda" required oninvalid="this.setCustomValidity('Password dan konfirmasi password tidak sama!')" oninput="setCustomValidity('')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8">
+                  </div>
+                </div>
+
+                <div class="modal-body2">
+                  <p style="margin-bottom: 0px;">Dengan klik lanjutkan, Anda menyetujui</p>
+                  <p style="margin-bottom: 20px;"><a href="termsandconditions.php">Syarat dan Ketentuan</a> yang telah ditentukan oleh <img src="images/katarongsokkecil9.jpg" style="vertical-align: sub;"></a></p>
+                  <button type="submit" class="btn" value="submit" name="register">LANJUTKAN</button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal register -->
 
 
     <!-- awal jumbotron -->
@@ -284,7 +187,7 @@ s0.parentNode.insertBefore(s1,s0);
       <h1 style="margin-bottom: 14px;">kapan pun.</h1>
       <p><img src="images/katarongsokkecil9.jpg"> merupakan platform yang menyediakan sarana</p>
       <p style="margin-bottom: 25px;">untuk memudahkan kamu dalam menjual barang bekas (rongsok)</p>
-      <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter4">Mulai Jual</button>
+      <button type="button" class="btn" data-toggle="modal" data-target="#login" style="font-weight: bold;">Mulai Jual</button>
     </div>
 
       <div class="col-sm-4">
@@ -384,5 +287,109 @@ s0.parentNode.insertBefore(s1,s0);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+    <script type="text/javascript">
+      function angka(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+      return true;
+      }
+    </script>
+    <script>
+      $(document).ready(function() {
+
+      if(window.location.href.indexOf('#register') != -1) {
+        $('#register').modal('show');
+    }
+  });
+    </script>
+    <script>
+      $(document).ready(function() {
+
+      if(window.location.href.indexOf('#sudahregister') != -1) {
+        swal("Anda telah terdaftar sebelumnya!", "Silahkan klik OK untuk kembali ke halaman login", "info", {
+
+  }).then(function() {
+    $('#login').modal('show');
+});
+    }
+  });
+    </script>
+    <script>
+      $(document).ready(function() {
+
+      if(window.location.href.indexOf('#login') != -1) {
+        swal("No. telepon Anda telah terdaftar sebelumnya", "Klik OK untuk melanjutkan", "success", {
+
+  }).then(function() {
+    window.location = "order.php";
+});
+    }
+  });
+    </script>
+    <script>
+      function tampilpassword() {
+      var x = document.getElementById("password1");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
+    <script>
+      function tampilkonfirmasipassword() {
+      var x = document.getElementById("konfirmasi_password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
+    <script>
+        function validate(){
+
+            var a = document.getElementById("password1").value;
+            var b = document.getElementById("konfirmasi_password").value;
+            if (a!=b) {
+               alert("Password dan konfirmasi password tidak sesuai!");
+               return false;
+            }
+        }
+     </script>
+     <script>
+       function checkLetter()
+        {
+            var validasiHuruf = /^[a-zA-Z ]+$/;
+            var namalengkap = document.getElementById("nama_lengkap");
+            
+            if (namalengkap.value.match(validasiHuruf)) {
+            } else {
+                alert("Nama lengkap hanya bisa diisi oleh huruf!"); 
+            }
+        }
+     </script>
+     <script>
+       document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
+     </script>
+     <script>
+        $('.navbar-collapse a').click(function(){
+            $(".navbar-collapse").collapse('hide');
+        });
+    </script>
   </body>
 </html>

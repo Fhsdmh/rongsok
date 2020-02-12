@@ -39,28 +39,29 @@ s0.parentNode.insertBefore(s1,s0);
   <div class="container" style="max-width: 600px;">
      <div class="modal-content">
       <div class="modal-body" style="margin-top: 0px;">
-        <img src="images/logorongsokbeta.svg" alt="logo navbar" width="82" height="47" style="margin: auto;display: block;">
+        <a class="navbar-brand" href="index.php" style="margin: auto;display: block;">
+          <img src="images/logorongsokbeta.svg" alt="logo navbar" width="82" height="47">
+        </a>
         <h2 class="modal-title" style="color: #0c1e2d;text-align: center;">Form Order</h2>
-        <form action="" method="POST" onsubmit="return validate();">
+        <form action="" method="POST" onsubmit="return validate();" enctype="multipart/form-data">
           <div class="form-group">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
-            <small id="emailhelp" class="form-text text-muted">Masukkan Email dengan benar dan sertakan @ (contoh@example.com)</small>
-          </div>
-          <div class="form-group">
-                  <label for="jenis">Jenis barang bekas</label>
-                  <div class="input-group mb-3">
-                  <select class="custom-select" id="inputGroupSelect01" required oninvalid="this.setCustomValidity('Mohon pilih Jenis barang bekas Anda!')" oninput="setCustomValidity('')">
-                    <option value="" disable selected>Pilih jenis barang bekas Anda</option>
-                    <option value="1">Bahan plastik</option>
-                    <option value="2">Bahan besi</option>
-                    <option value="3">Kertas HVS</option>
-                    <option value="4">Kertas lainnya</option>
-                    <option value="5">Campuran</option>
-                    <option value="6">Lainnya</option>
-                  </select>
-                  </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email Anda" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
+              <small id="emailhelp" class="form-text text-muted">Masukkan Email dengan benar dan sertakan @ (contoh@example.com)</small>
+            </div>
+            <label for="jenis">Jenis barang bekas</label>
+            <div class="input-group mb-3">
+              <select class="custom-select" id="inputGroupSelect01" required oninvalid="this.setCustomValidity('Mohon pilih Jenis barang bekas Anda!')" oninput="setCustomValidity('')">
+              <option value="" disable selected>Pilih jenis barang bekas Anda</option>
+              <option value="1">Bahan plastik</option>
+              <option value="2">Bahan besi</option>
+              <option value="3">Kertas HVS</option>
+              <option value="4">Kertas lainnya</option>
+              <option value="5">Campuran</option>
+              <option value="6">Lainnya</option>
+              </select>
+            </div>
 
                   <label for="upload">Upload foto barang bekas</label>
                   <div class="custom-file">

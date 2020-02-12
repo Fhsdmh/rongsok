@@ -22,15 +22,7 @@
   } else{
   	echo "<script type='text/javascript'>
   			window.location='index.php#register';
-		</script>";;
-  }
-
-    if($PASSWORD !== $konfirmasi_password) {
-    echo "Your passwords did not match";
-    exit;
-  }
-  else {
-
+		</script>";
   }
 
 }

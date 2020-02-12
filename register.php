@@ -28,6 +28,9 @@
 if($results->num_rows == 0)
 {
   $sql = "INSERT INTO user (created_at, nama_lengkap, no_telepon, email, alamat_lengkap, password, konfirmasi_password) VALUES ('$created_at','$nama_lengkap','$no_telepon','$email','$alamat_lengkap','$password','$konfirmasi_password')";
+  echo "<script type='text/javascript'>
+        window.location='index.php#sudahdaftar';
+    </script>";
 } else{
   echo 
   "<script type='text/javascript'>

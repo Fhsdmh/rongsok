@@ -6,7 +6,7 @@
   $conn = open_db();
 
 
-  if( isset($_POST["lanjutkan"]) ){
+  if( isset($_POST["lanjutkan1"]) ){
 
   $no_telepon = $_POST["no_telepon"];
 

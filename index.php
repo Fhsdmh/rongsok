@@ -78,10 +78,21 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
 
             <div class="modal-body">
-              <form action="login.php" method="post">
+              <form action="pass.php" method="post">
                 <div class="form-group">
                   <label for="no_telepon">No. Telepon</label>
                   <input type="text" id="no_telepon" class="form-control" placeholder="Masukkan no. telepon Anda" onkeypress="return angka(event)" name="no_telepon" required oninvalid="this.setCustomValidity('Minimal no. telepon 10 digit')" oninput="setCustomValidity('')" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" minlength="10" maxlength = "12">
+                  <label for="password">Password</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="tampilpassword1()">
+                      </div>
+                    </div>
+                    <input type="password" class="form-control" id="password2" name="password" placeholder="Masukkan Password Anda" required oninvalid="this.setCustomValidity('Password minimal 8 digit dan wajib terdiri dari huruf besar, huruf kecil, angka!')" oninput="setCustomValidity('')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8">
+                  </div>
+                  <small id="passwordhelp" class="form-text text-muted">Password minimal 8 digit dan wajib terdiri dari huruf besar, huruf kecil, angka</small>
+                </div>
                 </div>
                 <div class="modal-body2">
                   <button type="submit" class="btn" id="lanjutkan" name="lanjutkan">LANJUTKAN</button>
@@ -341,18 +352,6 @@ s0.parentNode.insertBefore(s1,s0);
 
   }).then(function() {
     $('#login').modal('show');
-});
-    }
-  });
-    </script>
-    <script>
-      $(document).ready(function() {
-
-      if(window.location.href.indexOf('#login') != -1) {
-        swal("No. telepon Anda telah terdaftar sebelumnya", "Klik OK untuk melanjutkan", "success", {
-
-  }).then(function() {
-    $('#masukpassword').modal('show');
 });
     }
   });

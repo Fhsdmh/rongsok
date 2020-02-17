@@ -1,32 +1,33 @@
 <?php
-  require 'koneksi.php'; ?>
+  require 'koneksi.php'; 
+  ?>
 
 <?php
   $conn = open_db();
 
 
-  if( isset($_POST["lanjutkan1"]) ){
+if( isset($_POST["lanjutkan"]) )
+{
 
-  $password = $_POST["password"];
+  $no_telepon = $_POST["no_telepon"];
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-  $data = mysqli_query($conn, "SELECT * FROM user WHERE password = '$password'");
-
-
-  if( mysqli_num_rows($data) == 1){
-  	echo "<script type='text/javascript'>
-  			window.location='order.php';
-		</script>";
-  	exit;
-
-  } else{
-  	echo "<script type='text/javascript'>
-  			alert('gagal')
-		</script>";
-    exit;
+  $sql = "SELECT * from user where no_telepon = '".$no_telepon."'";
+  $data = mysqli_query($conn,$sql);
+  $numrows = mysqli_num_rows($data);
+  
+  if($numrows  == 1){
+    $row = mysqli_fetch_assoc($data);
+    if(password_verify($password,$row['password'])){
+      echo "oke";
+    }
+    else{
+      echo "$password";
+    }
   }
-
+  else{
+    echo "gagal";
+  }
 }
 
-close_db($conn);
-
-  ?>
+?>

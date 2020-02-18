@@ -48,10 +48,20 @@ body {
 }
 
 .btn-link{
-  background-color: #0c1e2d;
-  color: white !important;
+  background-color: transparent;
+  border: 1.5px solid black;
 }
 
-.btn-link:hover{
-  background-color: #58251c;
+.list-group-item.active{
+  color: white !important;
+  background-color: #0c1e2d !important;
+  border-color: #0c1e2d !important;
+}
+
+.col-12{
+  padding-top: 15px !important;
+}
+
+.card-header{
+  text-align: center;
 }

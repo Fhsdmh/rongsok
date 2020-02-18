@@ -43,8 +43,9 @@ s0.parentNode.insertBefore(s1,s0);
           <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
               <a class="list-group-item list-group-item-action active" id="list-order-list" data-toggle="list" href="#list-order" role="tab" aria-controls="home">Order</a>
-              <a class="list-group-item list-group-item-action" id="list-transaksi-list" data-toggle="list" href="#list-transaksi" role="tab" aria-controls="profile">Transaksi</a>
-              <a class="list-group-item list-group-item-action" id="list-profil-list" data-toggle="list" href="#list-profil" role="tab" aria-controls="messages">Profil</a>
+              <a class="list-group-item list-group-item-action" id="list-harga-list" data-toggle="list" href="#list-harga" role="tab" aria-controls="harga">Harga</a>
+              <a class="list-group-item list-group-item-action" id="list-transaksi-list" data-toggle="list" href="#list-transaksi" role="tab" aria-controls="transaksi">Transaksi</a>
+              <a class="list-group-item list-group-item-action" id="list-profil-list" data-toggle="list" href="#list-profil" role="tab" aria-controls="harga">Profil</a>
             </div>
           </div>
         </div>
@@ -54,12 +55,21 @@ s0.parentNode.insertBefore(s1,s0);
       <!-- awal konten -->
       <div id="page-content-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-          <button class="btn btn-link" id="menu-toggle"><img src="images/menu.svg" alt="logo menu"></button>
+          <button class="btn btn-link" id="menu-toggle"><img src="images/menuopen.svg" alt="logo menu"></button>
 
         </nav>
-          <div class="col-8">
+          <div class="col-12">
             <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="list-order" role="tabpanel" aria-labelledby="list-order-list">iunaduaiwnd</div>
+              <div class="tab-pane fade show active" id="list-order" role="tabpanel" aria-labelledby="list-order-list"><div class="card">
+                  <div class="card-header">Form Order</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="list-harga" role="tabpanel" aria-labelledby="list-harga-list">awf</div>
               <div class="tab-pane fade" id="list-transaksi" role="tabpanel" aria-labelledby="list-transaksi-list">...</div>
               <div class="tab-pane fade" id="list-profil" role="tabpanel" aria-labelledby="list-profil-list">...</div>
             </div>

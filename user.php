@@ -1,5 +1,27 @@
 <?php
   require 'koneksi.php';
+  session_start();
+  if(isset($_SESSION['level']))
+    {
+    }
+    else
+    {
+        header("location:index.php#belumlogin");
+    }
+    $conn = open_db();
+    $sql = "SELECT * FROM user";                                               
+    $query = mysqli_query($conn, $sql);                                            
+    while ($data = mysqli_fetch_assoc($query))
+    {
+      $id = $data['id'];
+    }
+    close_db($conn);
+
+    $conn = open_db();
+    $query_edit = mysqli_query($conn, "SELECT * FROM user WHERE id='$id'")or die(mysql_error());
+    while ($data = mysqli_fetch_array($query_edit)){
+      $saldo = $data['saldo'];
+      $saldo = number_format($saldo,0,'.',',');
 ?>
 <!doctype html>
 <html lang="en" id="home">
@@ -22,18 +44,18 @@
     <title>Rongs-ok</title>
   </head>
   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5e14aac027773e0d832c4f65/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5e14aac027773e0d832c4f65/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
   <body>
     <div class="d-flex" id="wrapper">
       <!-- awal Sidebar -->
@@ -45,7 +67,8 @@ s0.parentNode.insertBefore(s1,s0);
               <a class="list-group-item list-group-item-action active" id="list-order-list" data-toggle="list" href="#list-order" role="tab" aria-controls="home">Order</a>
               <a class="list-group-item list-group-item-action" id="list-harga-list" data-toggle="list" href="#list-harga" role="tab" aria-controls="harga">Harga</a>
               <a class="list-group-item list-group-item-action" id="list-transaksi-list" data-toggle="list" href="#list-transaksi" role="tab" aria-controls="transaksi">Transaksi</a>
-              <a class="list-group-item list-group-item-action" id="list-profil-list" data-toggle="list" href="#list-profil" role="tab" aria-controls="harga">Profil</a>
+              <a class="list-group-item list-group-item-action" id="list-profil-list" data-toggle="list" href="#list-profil" role="tab" aria-controls="profil">Profil</a>
+              <a class="list-group-item list-group-item-action" href="logout.php">Keluar</a>
             </div>
           </div>
         </div>
@@ -54,24 +77,68 @@ s0.parentNode.insertBefore(s1,s0);
 
       <!-- awal konten -->
       <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom d-block">
           <button class="btn btn-link" id="menu-toggle"><img src="images/menuopen.svg" alt="logo menu"></button>
-
+          <h5 class="d-block float-right mb-0" style="padding: inherit;">Saldo Anda : Rp. <?php echo $saldo;?></h5>
+          <?php
+          }
+          close_db($conn);
+          ?>
         </nav>
           <div class="col-12">
             <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="list-order" role="tabpanel" aria-labelledby="list-order-list"><div class="card">
-                  <div class="card-header">Form Order</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
+              <div class="tab-pane fade show active" id="list-order" role="tabpanel" aria-labelledby="list-order-list">
+                belum ada
               </div>
               <div class="tab-pane fade" id="list-harga" role="tabpanel" aria-labelledby="list-harga-list">awf</div>
               <div class="tab-pane fade" id="list-transaksi" role="tabpanel" aria-labelledby="list-transaksi-list">...</div>
-              <div class="tab-pane fade" id="list-profil" role="tabpanel" aria-labelledby="list-profil-list">...</div>
+              <div class="tab-pane fade" id="list-profil" role="tabpanel" aria-labelledby="list-profil-list">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="card mt-3">
+                      <div class="card-header text-center font-weight-bold text-white">
+                        PROFIL
+                      </div>
+                      <div class="card-body">
+                        <?php
+                        $conn = open_db();
+                        $query_edit = mysqli_query($conn, "SELECT * FROM user WHERE id='$id'")or die(mysql_error());
+                        while ($data = mysqli_fetch_array($query_edit)){
+                        ?>
+                        <form action="ubahdatauser.php" method="POST">
+                          <input type="hidden" name="id" value = "<?php echo $id;?>">
+                          <div class="form-group">
+                            <label for="nama lengkap">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?php echo $data['nama_lengkap'];?>" required oninvalid="this.setCustomValidity('Nama lengkap hanya bisa diisi oleh huruf!')" oninput="setCustomValidity('')" pattern="[A-Za-z ]+">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="no telepon">No. Telepon</label>
+                            <input type="text" id="no_telepon" class="form-control" onkeypress="return angka(event)" name="no_telepon" value="<?php echo $data['no_telepon'];?>" required oninvalid="this.setCustomValidity('Minimal no. telepon 10 digit')" oninput="setCustomValidity('')" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" minlength="10" maxlength = "12">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $data['email'];?>" required oninvalid="this.setCustomValidity('Mohon masukkan Email Anda!')" oninput="setCustomValidity('')">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="alamat lengkap">Alamat lengkap</label>
+                            <textarea class="form-control" id="alamat_lengkap" name="alamat_lengkap" required oninvalid="this.setCustomValidity('Mohon masukkan Alamat lengkap Anda!')" oninput="setCustomValidity('')"><?php echo $data['alamat_lengkap'];?></textarea>
+                          </div>
+                          <div class="modal-footer border-top-0 d-block text-center">  
+                            <button type="submit" class="btn btn-primary" value="submit" name="edit-data-user">UBAH DATA</button>
+                          </div>
+                          <?php 
+                          }
+                          close_db($conn);
+                          ?>    
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
       </div>
@@ -220,5 +287,18 @@ s0.parentNode.insertBefore(s1,s0);
       $("#wrapper").toggleClass("toggled");
     });
   </script>
+
+  <script>
+      $(document).ready(function() {
+
+      if(window.location.href.indexOf('#ubahdata') != -1) {
+        swal("Ubah data berhasil!", "Silahkan klik OK untuk melanjutkan", "success", {
+  
+  }).then(function() {
+    window.location='user.php';
+});
+    }
+  });
+    </script>
   </body>
 </html>

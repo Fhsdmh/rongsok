@@ -22,18 +22,18 @@
     <title>Rongs-ok</title>
   </head>
   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5e14aac027773e0d832c4f65/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5e14aac027773e0d832c4f65/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
   <body style="margin-top: 30px;" oncontextmenu="return false;">
     <!-- awal navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f6f6f6;">
@@ -81,7 +81,7 @@ s0.parentNode.insertBefore(s1,s0);
               <form action="pass.php" method="post">
                 <div class="form-group">
                   <label for="no_telepon">No. Telepon</label>
-                  <input type="text" id="no_telepon" class="form-control" placeholder="Masukkan no. telepon Anda" onkeypress="return angka(event)" name="no_telepon" required oninvalid="this.setCustomValidity('Minimal no. telepon 10 digit')" oninput="setCustomValidity('')" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" minlength="10" maxlength = "12">
+                  <input type="text" id="no_telepon" class="form-control" placeholder="Masukkan no. telepon Anda" onkeypress="return angka(event)" name="no_telepon" required oninvalid="this.setCustomValidity('Minimal no. telepon 10 digit')" oninput="setCustomValidity('')" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" minlength="10" maxlength = "12" style="margin-bottom: 5px;">
                   <label for="password">Password</label>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -91,8 +91,10 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <input type="password" class="form-control" id="password2" name="password" placeholder="Masukkan Password Anda" required oninvalid="this.setCustomValidity('Password minimal 8 digit dan wajib terdiri dari huruf besar, huruf kecil, angka!')" oninput="setCustomValidity('')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8">
                   </div>
-                  <small id="passwordhelp" class="form-text text-muted">Password minimal 8 digit dan wajib terdiri dari huruf besar, huruf kecil, angka</small>
                 </div>
+                <div class="forgot text-center">
+                      <p>Belum punya akun? <button class="btn btn-link" type="button" data-toggle="modal" data-dismiss="modal" data-target="#register">Daftar</button></p>
+                    </div>
                 </div>
                 <div class="modal-body2">
                   <button type="submit" class="btn" id="lanjutkan" name="lanjutkan">LANJUTKAN</button>
@@ -156,7 +158,6 @@ s0.parentNode.insertBefore(s1,s0);
           <div class="modal-body" style="margin-top: 0px;">
             <form action="register.php" method="POST" onsubmit="return validate();">
                 <div class="form-group">
-                  <p style="margin-bottom: 0px; color: #58251c;font-size: 20px;font-weight: bold;">ANDA BELUM TERDAFTAR!</p>
                   <p style="font-weight: normal;">Silahkan lengkapi form di bawah ini untuk melanjutkan</p>
                   <label for="nama lengkap">Nama Lengkap</label>
                   <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan Nama lengkap Anda" required oninvalid="this.setCustomValidity('Nama lengkap hanya bisa diisi oleh huruf!')" oninput="setCustomValidity('')" pattern="[A-Za-z ]+">
@@ -248,25 +249,25 @@ s0.parentNode.insertBefore(s1,s0);
             <h5>Daftar Harga</h5>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-3 thumbnail">
             <img src="images/pricelist1.svg" alt="gambar pricelist 1">
             <p style="margin-top: 10px;margin-bottom: 0px;padding-right: 62px;">Plastik</p>
             <p style="padding-right: 65px;">(botol, gelas)</p>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-3 thumbnail">
             <img src="images/pricelist2.svg" alt="gambar pricelist 2">
             <p style="margin-bottom: 0px;margin-top: 21px;padding-right: 75px;">Bahan Besi</p>
             <p style="padding-right: 75px;">(setrika, tiang)</p>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-3 thumbnail">
             <img src="images/pricelist3.svg" alt="gambar pricelist 3">
             <p style="margin-bottom: 0px;margin-top: 16px;padding-right: 80px;">Bahan Kertas HVS</p>
             <p style="padding-right: 77px;">(buku, laporan)</p>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-3 thumbnail">
             <img src="images/pricelist4.svg" alt="gambar pricelist 4">
             <p style="margin-bottom: 0px;margin-top: 7px;padding-right: 65px;">Kertas lain</p>
             <p style="padding-right: 60px;">(kardus, sampul buku)</p>
@@ -357,6 +358,18 @@ s0.parentNode.insertBefore(s1,s0);
   });
     </script>
     <script>
+      $(document).ready(function() {
+
+      if(window.location.href.indexOf('#passsalah') != -1) {
+        swal("Password yang Anda masukkan salah!", "Silahkan klik OK untuk kembali ke halaman login", "error", {
+
+  }).then(function() {
+    $('#login').modal('show');
+});
+    }
+  });
+    </script>
+    <script>
       function tampilpassword() {
       var x = document.getElementById("password1");
       if (x.type === "password") {
@@ -437,7 +450,19 @@ s0.parentNode.insertBefore(s1,s0);
         swal("Terima kasih telah mendaftar", "Klik OK untuk melanjutkan", "success", {
 
   }).then(function() {
-    window.location='order.php';
+    $('#login').modal('show');
+});
+    }
+  });
+    </script>
+    <script>
+      $(document).ready(function() {
+
+      if(window.location.href.indexOf('#belumlogin') != -1) {
+        swal("Anda belum melakukan login!", "Silahkan klik OK untuk melanjutkan", "error", {
+
+  }).then(function() {
+    $('#login').modal('show');
 });
     }
   });

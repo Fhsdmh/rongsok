@@ -22,18 +22,18 @@
     <title>Rongs-ok</title>
   </head>
   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5e14aac027773e0d832c4f65/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5e14aac027773e0d832c4f65/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
   <body>
     <!-- awal navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f6f6f6;">
@@ -75,7 +75,45 @@ s0.parentNode.insertBefore(s1,s0);
       </nav>
       <div class="tab-content" id="nav-tabContent" style="text-align: center;">
         <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <p class="h1" style="margin-top: 20px;">Tentang Kami</p>
+          <p class="h1" style="margin-top: 20px;margin-bottom: 30px;">Tentang Kami</p>
+          <div class="row direksi">
+            <div class="col-sm-4 col-user">
+              <div class="card card-user">
+                <img src="images/usericon.svg" class="card-img-top logo-user" alt="logo-user">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Said Ahmad</h5>
+                  <p class="card-text">Chief Executive Officer & Founder</p>
+                  <a href="https://www.instagram.com/saidahmadzzz/" target="_blank"><img src="images/insta.svg" class="logo-user log-1" alt="" width="32" height="32"></a>
+                  <a href="http://line.me/ti/p/~" target="_blank"><img src="images/linelog.svg" class="logo-user log-2" alt="" width="32" height="32"></a>
+                  <a href="https://twitter.com/saidahmadzzz" target="_blank"><img src="images/twitterlog.svg" class="logo-user" alt="" width="32" height="32"></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-user">
+              <div class="card card-user">
+                <img src="images/usericon.svg" class="card-img-top logo-user" alt="logo-user">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Robih Hilman Ardiatama</h5>
+                  <p class="card-text">Chief Financial Officer</p>
+                  <a href="https://www.instagram.com/robihhilman/" target="_blank"><img src="images/insta.svg" class="logo-user log-1" alt="" width="32" height="32"></a>
+                  <a href="http://line.me/ti/p/~" target="_blank"><img src="images/linelog.svg" class="logo-user log-2" alt="" width="32" height="32"></a>
+                  <a href="https://twitter.com/Robihhilman1" target="_blank"><img src="images/twitterlog.svg" class="logo-user" alt="" width="32" height="32"></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-user">
+              <div class="card card-user">
+                <img src="images/usericon.svg" class="card-img-top logo-user" alt="logo-user">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Ashif Ahmad Hakim</h5>
+                  <p class="card-text">Chief Technology Officer</p>
+                  <a href="https://www.instagram.com/fhsdmh_/" target="_blank"><img src="images/insta.svg" class="logo-user log-1" alt="" width="32" height="32"></a>
+                  <a href="http://line.me/ti/p/~" target="_blank"><img src="images/linelog.svg" class="logo-user log-2" alt="" width="32" height="32"></a>
+                  <a href="https://twitter.com/Fhsdmh_" target="_blank"><img src="images/twitterlog.svg" class="logo-user" alt="" width="32" height="32"></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="nav-tc" role="tabpanel" aria-labelledby="nav-tc-tab">
           <p class="h1" style="margin-top: 20px;">Syarat dan Ketentuan</p>

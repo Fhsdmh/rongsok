@@ -6,6 +6,31 @@ html {
 	text-align: center;
 }
 
+img.logo-user{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  float: none !important;
+  padding: auto;
+}
+
+img.log-1, .log-2{
+  margin-right: 1rem;
+}
+
+.card-user{
+  width: 300px;
+  margin-bottom: 50px !important;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.col-user{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
 
 .jumbotron{
 	min-height: 640px;
@@ -234,7 +259,7 @@ html {
     border: 1px;
     margin: auto;
     outline: none;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .modal-body2 .btn{

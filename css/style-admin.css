@@ -47,9 +47,23 @@ body {
   border-radius: 0px !important;
 }
 
+.btn-edit img{
+  vertical-align: top;
+}
+
 .btn-link{
   background-color: transparent;
   border: 1.5px solid black;
+}
+
+a.btn-edit{
+  border: none !important;
+  outline: none !important;
+}
+
+a.btn-edit:hover{
+  border: none !important;
+  outline: none !important;
 }
 
 .list-group-item.active{
@@ -59,23 +73,7 @@ body {
 }
 
 .card-header{
-  background-color: #0c1e2d;
-}
-
-.card{
-  border: 1px solid #0c1e2d;
-}
-
-.btn-primary{
-  background-color: #0c1e2d !important;
-  outline: none !important;
-  border: 1px solid #0c1e2d;
-}
-
-.btn-primary:hover{
-  background-color: #58251c !important;
-  outline: none !important;
-  border: 1px solid #58251c;
+  text-align: center;
 }
 
 .swal-footer{
@@ -113,4 +111,18 @@ body {
 
 .swal-text{
   color: #0c1e2d;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 480px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.card-header{
+  background-color: #0c1e2d;
 }

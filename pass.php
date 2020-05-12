@@ -1,5 +1,6 @@
 <?php
-  require 'koneksi.php'; 
+  require 'koneksi.php';
+  session_start();
   ?>
 
 <?php
@@ -18,18 +19,30 @@ if( isset($_POST["lanjutkan"]) )
   
   if($numrows == 1){
     $row = mysqli_fetch_assoc($data);
-    if(password_verify($password, $row['password'])){
+    if(password_verify($password, $row['password']) && $row['level'] == "admin"){
+      $_SESSION['level'] = "admin";
+      echo "<script type='text/javascript'>
+        window.location='admin.php';
+    </script>";
+      exit();
+
+    }else if(password_verify($password, $row['password']) && $row['level'] == "user"){
+      $_SESSION['level'] = "user";
       echo "<script type='text/javascript'>
         window.location='user.php';
     </script>";
-    exit;
-    }
-    else{
-      echo "gagal";
+      exit();
+
+    }else{
+      echo "<script type='text/javascript'>
+        window.location='index.php#passsalah';
+    </script>";
     }
   }
   else{
-    echo "as";
+    echo "<script type='text/javascript'>
+        window.location='index.php#register';
+    </script>";
   }
 }
 

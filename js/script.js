@@ -1,12 +1,13 @@
-$('page-scroll').on('click',function(e){
-	var tujuan = $(this).attr('href');
-	var elementujuan = $(tujuan);
+$(window).scroll(function(){
+  var wScroll = $(this).scrollTop();
 
-	$('body').animate({
-		scrollTop: elementujuan.offset().top - 50
-	});
-
-	e.preventDefault();
+  if( wScroll > $('.daftarharga').offset().top -250){
+    $('.daftarharga .thumbnail').each(function){
+      setTimeout(function(){
+        $('.daftarharga .thumbnail').eq(i).addClass('muncul');
+      }, 300 * (i+1));
+    }
+  }
 });
 
 $('.nav-link').on('click',function() {
